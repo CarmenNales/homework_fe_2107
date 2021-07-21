@@ -162,18 +162,20 @@ const inventory = [
     },
 ];
 
-
 // ----------------------------------------------------------
 // FUNCTIES
 // ----------------------------------------------------------
+// Alle logs van de functies staan helemaal onderaan dit programma
 
-// 1A : Schrijf een functie die berekent hoeveel exemplaren er nog verkocht moeten worden.
+
+// 1A OPDRACHT : Schrijf een functie die berekent hoeveel exemplaren er nog verkocht moeten worden. Maak dit aantal rood
+
 // Telt hoeveel tv's er in totaal nog verkocht moeten worden
 function checkNumberToSell(inventory) {
     let sum = 0;
 
     inventory.map((product) => {
-        sum += (product.originalStock - product.sold)
+        sum += (product.originalStock - product.sold);
     });
 
     return sum;
@@ -182,7 +184,9 @@ function checkNumberToSell(inventory) {
 const numberToSell = checkNumberToSell(inventory);
 
 
-// 1B : Geef het aantal exemplaren dat nog verkocht moet worden in het rood weer op de pagina
+// 1B OPDRACHT : Geef het aantal exemplaren dat nog verkocht moet worden in het rood weer op de pagina
+
+// Koppel de functie aan een id en class in HTML en maak een element aan
 const numbersToSellContainer = document.getElementById('numbers-to-sell');
 const numbersToSellElement = document.createElement('p');
 numbersToSellElement.textContent = numberToSell.toString();
@@ -191,52 +195,57 @@ numbersToSellContainer.appendChild(numbersToSellElement);
 
 // -------------------------------------------------------------------
 
-// 2A : Gebruik een array-methode om een array te maken met alle tv-type namen.
-// Geeft alle tv-types terug
+// 2A OPDRACHT : Gebruik een array-methode om een array te maken met alle tv-type namen.
+
+// Dit was de originele functie, maar is vervangen voor onderstaande functie die de uitkomsten in een lijst uitgeeft
+// Deze functie geeft alle tv-types terug
 // const collectTvTypes = inventory.map((product) => { return tvTypes });
 
-
+// Extra toegevoegd:
+// Deze functie geeft alle gevonden tv types in een 'unordered list' als 'list items' weer (met een andere methode)
 window.onload = function () {
 
-    const ul = document.querySelectorAll('ul')[0]
+    const ul = document.querySelectorAll('ul')[0];
+
     const typeList = inventory.map(product => {
-        const productType = document.createElement('li')
-        productType.innerHTML = `${product.type}`
+        const productType = document.createElement('li');
+        productType.innerHTML = `${product.type}`;
         return productType;
     })
 
     for (let i = 0; i < typeList.length; i++) {
-        ul.appendChild(typeList[i])
+        ul.appendChild(typeList[i]);
     }
 }
 
 
-// 2B : Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht
-// Geeft alle uitverkochte tv's weer
+// 2B OPDRACHT : Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die volledig uitverkocht zijn
 
+// Geeft alle uitverkochte tv's weer
 const allSoldOutTvs = inventory.filter((product) => {
     return (product.originalStock - product.sold) === 0;
 })
 
 
-// 2C : Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken
-// Geeft alle tv's met AmbiLight terug
+// 2C OPDRACHT : Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken
 
+// Geeft alle tv's met AmbiLight terug
 const selectTvWithAmbiLight = inventory.filter((product) => {
     return product.options.ambiLight === true;
 });
 
 
-// 2D : Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert.
-// Sorteert de tv's op prijs van laag naar hoog
+// 2D OPDRACHT : Schrijf een functie die alle tv's van laagste naar hoogste prijs sorteert.
 
+// Sorteert de tv's op prijs van laag naar hoog
 const selectPrice = inventory.sort((a, b) => a.price - b.price);
+
 
 // -------------------------------------------------------------------
 
-// 3A
-// Berekent uit wat de totale opbrengst is, als we alle exemplaren van ieder type zouden verkopen
+// 3A OPDRACHT: Bereken de totale opbrengst van de tv als alle exemplaren verkocht zouden worden, maak dit bedrag blauw
 
+// Berekent uit wat de totale opbrengst is, als we alle exemplaren van ieder type zouden verkopen
 function calculateProfitOfAllTvs(inventory) {
     let totalPrice = 0;
 
@@ -249,17 +258,17 @@ function calculateProfitOfAllTvs(inventory) {
 
 const totalProfit = calculateProfitOfAllTvs(inventory);
 
-
+// Koppel de functie aan een id en class in HTML en maak een element aan
 const calculateFullProfitContainer = document.getElementById('calculate-profit');
 const calculateFullProfitElement = document.createElement('p');
 calculateFullProfitElement.textContent = `€${totalProfit},-`;
 calculateFullProfitElement.setAttribute('class', 'calculate-profit');
-calculateFullProfitContainer.appendChild(calculateFullProfitElement)
+calculateFullProfitContainer.appendChild(calculateFullProfitElement);
 
 
-// 3B
+// 3B OPDRACHT: Bereken wat de huidige opbrengst is van de verkochte tv's, maak dit bedrag groen
+
 // Berekent uit wat de huidige opbrengst van de verkochte tv's
-
 function currentProfitTvs(inventory) {
     let price = 0;
 
@@ -272,16 +281,164 @@ function currentProfitTvs(inventory) {
 
 const calculateCurrentProfit = currentProfitTvs(inventory);
 
+// Koppel de functie aan een id en class in HTML en maak een element aan
 const calculateCurrentProfitContainer = document.getElementById('calculate-current-profit');
 const calculateCurrentProfitElement = document.createElement('p');
 calculateCurrentProfitElement.textContent = `€${calculateCurrentProfit},-`;
 calculateCurrentProfitElement.setAttribute('class', 'calculate-current-profit');
-calculateCurrentProfitContainer.appendChild(calculateCurrentProfitElement)
+calculateCurrentProfitContainer.appendChild(calculateCurrentProfitElement);
 
 
 // -------------------------------------------------------------------
 
+// 4 OPDRACHT: Geef twee type-namen weer op de pagina
 
+// Maak een element van 2 willekeurige tv's uit de lijst en geef deze weer als 'list-item'
+const listOfTvs = document.getElementById('two-tv-types');
+
+// 1ste tv
+const tvNumberOne = document.createElement('li');
+tvNumberOne.textContent = inventory[2].type;
+listOfTvs.appendChild(tvNumberOne);
+
+// 2e tv
+const tvNumberTwo = document.createElement('li');
+tvNumberTwo.textContent = inventory[5].type;
+listOfTvs.appendChild(tvNumberTwo);
+
+
+// -------------------------------------------------------------------
+
+// 5A OPDRACHT: Maak een herbruikbare functie die verwacht 1 tv-object als parameter en de naam op de volgende manier
+// samenvoegt: [merk] [type] - [naam]. De functie moet herbruikbaar zijn
+
+// Maak functie en return het merk, type en de naam
+function makeTvName(tv) {
+    return `${tv.brand} ${tv.type} - ${tv.name}`;
+}
+
+
+// 5B OPDRACHT: Maak een herbruikbare functie die ervoor zorgt dat de prijs van een tv netjes geformat wordt. De functie
+// moet een parameter verwachten (zoals 379) en daar de volgende string van maken: €379,-.
+
+function makeTvPrice(tv) {
+    return `€${tv.price},-`;
+}
+
+
+// 5C OPDRACHT: Maak een herbruikbare functie die een string gegenereerd voor alle beschikbare schermgroottes van één tv in
+// zowel inches als cm. De functie die één screen-sizes array en groottes op de volgende manier samenvoegt:
+// schermgrootte] inches ([schermgrootte omgerekend]cm) | [schermgrootte] inches ([schermgrootte omgerekend]cm) etc.
+
+function createScreenSizesString(screenSizes) {
+    let showScreenSizes = '';
+
+    for (let i = 0; i < screenSizes.length; i++) {
+
+        const sizeInches = screenSizes[i];
+        const sizeCm = screenSizes[i] * 2.54;
+
+        // Maak een string
+        showScreenSizes = showScreenSizes + `${sizeInches} inch (${sizeCm} cm)`;
+
+        // Voeg | toe tot het laatste scherm
+        if (i < screenSizes.length - 1) {
+            showScreenSizes = `${showScreenSizes} | `;
+        }
+    }
+
+    return showScreenSizes;
+}
+
+
+// 5D OPDRACHT: Geef 1 van de twee tv's op de pagina weer, maak gebruik van de functies van opdracht 5A, 5B, 5C
+
+const tvContainer = document.getElementById('one-tv-type');
+
+const tvOneName = document.createElement('h2');
+tvOneName.textContent = makeTvName(inventory[6]);
+tvContainer.appendChild(tvOneName);
+
+const tvOnePrice = document.createElement('h3');
+tvOnePrice.textContent = makeTvPrice(inventory[6])
+tvContainer.appendChild(tvOnePrice);
+
+const tvSizes = document.createElement('p');
+tvSizes.textContent = createScreenSizesString(inventory[6].availableSizes);
+tvContainer.appendChild(tvSizes);
+
+// 5E OPDRACHT: Schrijf een herbruikbare functie die ALLE tv's weergeeft op de pagina zoals in het voorbeeld. Deze
+// "tv-generator-functie" verwacht één parameter: de volledige array met tv-objecten. Vergeet 'm niet aan te roepen!
+
+function dislayTvList(tvs) {
+    const tvList = document.getElementById('tv-list');
+
+    tvs.map((tv) => {
+        const tvContainer = document.createElement('li');
+        tvContainer.setAttribute('class', 'tv-list-item');
+
+        const tvName = document.createElement('h2');
+        tvName.textContent = makeTvName(tv);
+        tvContainer.appendChild(tvName);
+
+        const tvPrice = document.createElement('h3');
+        tvPrice.textContent = makeTvPrice(tv);
+        tvContainer.appendChild(tvPrice);
+
+        const tvSizes = document.createElement('p');
+        tvSizes.textContent = createScreenSizesString(tv.availableSizes);
+        tvContainer.appendChild(tvSizes);
+
+        return tvList.appendChild(tvContainer);
+    });
+}
+
+
+// ----------------------------------------------------------
+
+// BONUSOPDRACHT : Maak 3 knoppen op de pagina: Sorteer op prijs, AmbiLight TV's en uitverkochte exemplaren.
+// Gebruik de code je opdracht 2B, 2C en 2D gemaakt hebt en schrijf dit om naar functies zodat ze werken als erop
+// geklikt wordt. Log bij de druk op de knop de uitkomsten van de functies in de console.
+
+
+const soldOutButton = document.getElementById('sold-out-btn');
+const ambilightButton = document.getElementById('ambilight-btn');
+const sortButton = document.getElementById('sort-btn');
+
+// 2 achter de naam gezet om dubbele namen te voorkomen
+// Geeft alle uitverkochte tv's weer
+function allSoldOutTvs2() {
+    const soldOut = inventory.filter((product) => {
+        return (product.originalStock - product.sold) === 0;
+    })
+    console.log(soldOut)
+}
+
+// 2 achter de naam gezet om dubbele namen te voorkomen
+// Geeft alle tv's met AmbiLight terug
+function selectTvWithAmbiLight2() {
+    const tvWithAmbi = inventory.filter((product) => {
+        return product.options.ambiLight === true;
+    });
+    console.log(tvWithAmbi)
+}
+
+// 2 achter de naam gezet om dubbele namen te voorkomen
+// Sorteert de tv's op prijs van laag naar hoog
+function sortPrice2() {
+    const  sortPrice = inventory.sort((a, b) => a.price - b.price);
+    console.log(sortPrice);
+    return sortPrice;
+}
+
+
+// Functies zijn zichtbaar bij opdracht 2
+// 2B: allSoldOutTvs
+soldOutButton.addEventListener('click', allSoldOutTvs2);
+// 2C: selectTvWithAmbiLight
+ambilightButton.addEventListener('click', selectTvWithAmbiLight2);
+// 2D: selectPrice
+sortButton.addEventListener('click', sortPrice2);
 
 
 // ----------------------------------------------------------
@@ -311,6 +468,7 @@ console.log("\nDit is de opbrengst prijs van alle ingekochte tv's: €" + totalP
 
 // 3B
 console.log("\nDit is de opbrengst van de huidige verkochte tv's: €" + calculateCurrentProfit);
+
 
 // ----------------------------------------------------------------------------------------
 

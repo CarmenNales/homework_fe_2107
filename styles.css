@@ -4,7 +4,10 @@
     --color-1: #666;
     --color-2: #333;
     --color-3: #222;
-
+    --color-4: #8000ff;
+    --color-5: #555;
+    --color-6: #444;
+    --color-7: #bbff00;
 }
 
 *, *::before, *::after {
@@ -27,13 +30,27 @@ header {
     width: 100%;
     height: auto;
     background: var(--color-2);
-    color: var(--color-1);
+    color: var(--color-4);
     font-size: 5rem;
     text-align: center;
+    border-bottom: 2px solid var(--color-4);
 }
 
-h3 {
+.my_page {
+    padding: 10rem 6rem 6rem;
+    background: var(--color-1);
+    width: 50%;
+    height: 100vh;
+}
+
+h1, h3 {
     margin-top: 1rem;
+}
+
+hr {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-top: 0.2rem solid var(--color-7);
 }
 
 li {
@@ -41,27 +58,20 @@ li {
 }
 
 button {
-    background: #444;
+    background: var(--color-6);
     height: 2rem;
-    width: 10rem;
-    color: #000;
+    width: 15rem;
+    color: var(--color-3);
     font-size: 1rem;
     font-family: Quicksand, sans-serif;
     font-weight: bold;
     border-radius: 2rem;
-    border: 2px solid #000;
-    margin-top: 1rem;
+    border: 2px solid var(--color-3);
+    margin: 1rem;
 }
 
 button:hover {
-    background: #222;
-}
-
-.my_page {
-    padding: 10rem 5rem 5rem;
-    background: var(--color-1);
-    width: 50%;
-    height: 100vh;
+    background: #555;
 }
 
 .numbers-to-sell {
@@ -74,6 +84,17 @@ button:hover {
 
 .calculate-current-profit {
     color: #00b61f;
+}
+
+.one-tv-type {
+    background: var(--color-5);
+    position: absolute;
+    width: 25rem;
+    height: 8rem;
+    right: 28%;
+    top: 38%;
+    border: 2px dashed var(--color-7);
+    align-items: center;
 }
 
 /*----------------------------------*/
