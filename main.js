@@ -224,7 +224,7 @@ window.onload = function () {
 // Geeft alle uitverkochte tv's weer
 const allSoldOutTvs = inventory.filter((product) => {
     return (product.originalStock - product.sold) === 0;
-})
+});
 
 
 // 2C OPDRACHT : Gebruik een array-methode om alle tv's te verzamelen (de hele objecten) die over AmbiLight beschikken
@@ -330,7 +330,7 @@ function makeTvPrice(tv) {
 // zowel inches als cm. De functie die één screen-sizes array en groottes op de volgende manier samenvoegt:
 // schermgrootte] inches ([schermgrootte omgerekend]cm) | [schermgrootte] inches ([schermgrootte omgerekend]cm) etc.
 
-function createScreenSizesString(screenSizes) {
+function showScreenSize(screenSizes) {
     let showScreenSizes = '';
 
     for (let i = 0; i < screenSizes.length; i++) {
@@ -360,11 +360,11 @@ tvOneName.textContent = makeTvName(inventory[6]);
 tvContainer.appendChild(tvOneName);
 
 const tvOnePrice = document.createElement('h3');
-tvOnePrice.textContent = makeTvPrice(inventory[6])
+tvOnePrice.textContent = makeTvPrice(inventory[6]);
 tvContainer.appendChild(tvOnePrice);
 
 const tvSizes = document.createElement('p');
-tvSizes.textContent = createScreenSizesString(inventory[6].availableSizes);
+tvSizes.textContent = showScreenSize(inventory[6].availableSizes);
 tvContainer.appendChild(tvSizes);
 
 // 5E OPDRACHT: Schrijf een herbruikbare functie die ALLE tv's weergeeft op de pagina zoals in het voorbeeld. Deze
@@ -386,7 +386,7 @@ function dislayTvList(tvs) {
         tvContainer.appendChild(tvPrice);
 
         const tvSizes = document.createElement('p');
-        tvSizes.textContent = createScreenSizesString(tv.availableSizes);
+        tvSizes.textContent = showScreenSize(tv.availableSizes);
         tvContainer.appendChild(tvSizes);
 
         return tvList.appendChild(tvContainer);
@@ -411,7 +411,7 @@ function allSoldOutTvs2() {
     const soldOut = inventory.filter((product) => {
         return (product.originalStock - product.sold) === 0;
     })
-    console.log(soldOut)
+    console.log(soldOut);
 }
 
 // 2 achter de naam gezet om dubbele namen te voorkomen
@@ -420,7 +420,7 @@ function selectTvWithAmbiLight2() {
     const tvWithAmbi = inventory.filter((product) => {
         return product.options.ambiLight === true;
     });
-    console.log(tvWithAmbi)
+    console.log(tvWithAmbi);
 }
 
 // 2 achter de naam gezet om dubbele namen te voorkomen

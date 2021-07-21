@@ -19,8 +19,8 @@
 html {
     background: var(--color-3);
     color: var(--color-2);
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 1.2rem;
+    font-weight: normal;
     font-family: Quicksand, sans-serif;
 }
 
@@ -34,17 +34,19 @@ header {
     font-size: 5rem;
     text-align: center;
     border-bottom: 2px solid var(--color-4);
+    z-index: 1;
 }
 
 .my_page {
-    padding: 10rem 6rem 6rem;
+    padding: 6rem 6rem 6rem;
     background: var(--color-1);
     width: 50%;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 h1, h3 {
     margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 hr {
@@ -60,14 +62,14 @@ li {
 button {
     background: var(--color-6);
     height: 2rem;
-    width: 15rem;
+    width: 20rem;
     color: var(--color-3);
     font-size: 1rem;
     font-family: Quicksand, sans-serif;
     font-weight: bold;
     border-radius: 2rem;
     border: 2px solid var(--color-3);
-    margin: 1rem;
+    margin: 0.2rem;
 }
 
 button:hover {
@@ -88,13 +90,12 @@ button:hover {
 
 .one-tv-type {
     background: var(--color-5);
-    position: absolute;
-    width: 25rem;
-    height: 8rem;
-    right: 28%;
-    top: 38%;
     border: 2px dashed var(--color-7);
     align-items: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 25rem;
+    z-index: 0;
 }
 
 /*----------------------------------*/
