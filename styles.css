@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+
+:root {
+    --color-1: #666;
+    --color-2: #333;
+    --color-3: #222;
+    --color-4: #8000ff;
+    --color-5: #555;
+    --color-6: #444;
+    --color-7: #bbff00;
+    --color-red: #FF0051FF;
+    --color-blue: #0099ff;
+    --color-green: #00b61f;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: var(--color-3);
+    color: var(--color-2);
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: Quicksand, sans-serif;
+}
+
+header {
+    position: fixed;
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    background: var(--color-2);
+    color: var(--color-4);
+    font-size: 4rem;
+    text-align: center;
+    border-bottom: 2px solid var(--color-4);
+    z-index: 1;
+}
+
+.my_page {
+    padding: 9rem 4rem 4rem;
+    background: var(--color-1);
+    width: 50%;
+    min-height: 100vh;
+}
+
+h1, h3 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+hr {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-top: 0.2rem solid var(--color-7);
+}
+
+li {
+    margin-left: 2rem;
+}
+
+button {
+    background: var(--color-6);
+    height: 2rem;
+    width: 10rem;
+    color: var(--color-3);
+    font-size: 1rem;
+    font-family: Quicksand, sans-serif;
+    font-weight: bold;
+    border-radius: 2rem;
+    border: 2px solid var(--color-3);
+    margin: 0.2rem;
+}
+
+button:hover {
+    background: #555;
+}
+
+.numbers-to-sell {
+    color: var(--color-red);
+    font-weight: bold;
+}
+
+.calculate-profit {
+    color: var(--color-blue);
+    font-weight: bold;
+}
+
+.calculate-current-profit {
+    color: var(--color-green);
+    font-weight: bold;
+}
+
+.one-tv-type {
+    background: var(--color-5);
+    border: 2px dashed var(--color-7);
+    text-align: center;
+    padding: 1rem;
+    width: 25rem;
+    z-index: 0;
+    margin: auto;
+}
+
+.btns-menu {
+    color: var(--color-4);
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/*----------------------------------*/
+
+.u-flex-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

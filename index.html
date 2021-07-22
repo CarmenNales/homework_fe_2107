@@ -3,8 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Tech It Easy Dashboard</title>
+    <link href="styles.css" rel="stylesheet">
+    <script async src="main.js"></script>
 </head>
-<body>
+<body class="u-flex-center">
 
+<header>TECH IT EASY</header>
+<div class="my_page">
+    <h2>Verkoopinformatie:</h2>
+    <div id="numbers-to-sell">
+        <h3> Hoeveelheid tv's dat nog verkocht moet worden: </h3>
+    </div>
+
+    <h3>Lijst met alle verschillende tv types: </h3>
+    <ul id="tv-types"></ul>
+
+
+    <h3>Lijst met 2 verschillende tv types: </h3>
+    <ul id="two-tv-types"></ul>
+
+    <div id="calculate-profit">
+        <h3>Totale opbrengst: </h3>
+    </div>
+
+    <div id="calculate-current-profit">
+        <h3>Totale huidige opbrengst: </h3>
+    </div>
+
+    <hr>
+
+    <div class="one-tv-type u-flex-center">
+        <ul id="one-tv-type"></ul>
+    </div>
+
+    <hr>
+
+    <h3>Lijst van alle tv's met de typenamen, prijs en schermgroottes: </h3>
+    <ul id="tv-list"></ul>
+
+    <div class="btns-menu">
+        <h2>Producten</h2>
+        <figure>
+            <button id="sort-btn" type="button">
+                Sorteer op prijs
+            </button>
+            <button id="ambilight-btn" type="button">
+                AmbiLight
+            </button>
+            <button id="sold-out-btn" type="button">
+                Uitverkocht!
+            </button>
+        </figure>
+    </div>
+</div>
 </body>
 </html>

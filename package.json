@@ -1,0 +1,32 @@
+{
+  "name": "frontend-javascript-tech-it-easy",
+  "version": "1.0.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "readline-sync": "^1.4.10",
+    "save-dev": "0.0.1-security"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "description": "## Inleiding Je bent net begonnen als developer bij een bedrijf genaamd _Tech It Easy_, dat TV's verkoopt. Recentelijk hebben ze Fred van financieën ontslagen omdat hij telkens wel online was op Teams,  maar eigenlijk dutjes deed en niets uitvoerde. Dit betekent dat de medewerkers een financieel  dashboard nodig hebben om zelf de administratie bij te houden.",
+  "main": "main.js",
+  "scripts": {
+    "test": "npx jest",
+    "test:watch": "npx jest --watchAll"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarmenNales/homework_fe_2107.git"
+  },
+  "author": "Carmen Nales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarmenNales/homework_fe_2107/issues"
+  },
+  "homepage": "https://github.com/CarmenNales/homework_fe_2107#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": []
+}
