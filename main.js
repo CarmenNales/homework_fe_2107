@@ -367,31 +367,42 @@ const tvSizes = document.createElement('p');
 tvSizes.textContent = showScreenSize(inventory[6].availableSizes);
 tvContainer.appendChild(tvSizes);
 
+
 // 5E OPDRACHT: Schrijf een herbruikbare functie die ALLE tv's weergeeft op de pagina zoals in het voorbeeld. Deze
 // "tv-generator-functie" verwacht één parameter: de volledige array met tv-objecten. Vergeet 'm niet aan te roepen!
 
-function dislayTvList(tvs) {
+// Functie die alle tv's weergeeft
+function showTvList(inventory) {
     const tvList = document.getElementById('tv-list');
 
-    tvs.map((tv) => {
+    // Loop met .map() door de hele inventory, voer per tv deze stappen uit en return allemaal in een lijst
+    inventory.map((tv) => {
         const tvContainer = document.createElement('li');
         tvContainer.setAttribute('class', 'tv-list-item');
 
-        const tvName = document.createElement('h2');
+        // Tv naam als h3 element
+        const tvName = document.createElement('h3');
         tvName.textContent = makeTvName(tv);
         tvContainer.appendChild(tvName);
 
-        const tvPrice = document.createElement('h3');
+        // Tv prijs als h4 element
+        const tvPrice = document.createElement('h4');
         tvPrice.textContent = makeTvPrice(tv);
         tvContainer.appendChild(tvPrice);
 
+        // Tv scherm groottes als p element
         const tvSizes = document.createElement('p');
         tvSizes.textContent = showScreenSize(tv.availableSizes);
         tvContainer.appendChild(tvSizes);
 
+        // Return de elementen per tv
         return tvList.appendChild(tvContainer);
     });
+
 }
+
+// Totale lijst met tv's
+const tvList = showTvList(inventory);
 
 
 // ----------------------------------------------------------
@@ -400,7 +411,7 @@ function dislayTvList(tvs) {
 // Gebruik de code je opdracht 2B, 2C en 2D gemaakt hebt en schrijf dit om naar functies zodat ze werken als erop
 // geklikt wordt. Log bij de druk op de knop de uitkomsten van de functies in de console.
 
-
+// Koppel de id's aan elementen
 const soldOutButton = document.getElementById('sold-out-btn');
 const ambilightButton = document.getElementById('ambilight-btn');
 const sortButton = document.getElementById('sort-btn');
@@ -426,7 +437,7 @@ function selectTvWithAmbiLight2() {
 // 2 achter de naam gezet om dubbele namen te voorkomen
 // Sorteert de tv's op prijs van laag naar hoog
 function sortPrice2() {
-    const  sortPrice = inventory.sort((a, b) => a.price - b.price);
+    const sortPrice = inventory.sort((a, b) => a.price - b.price);
     console.log(sortPrice);
     return sortPrice;
 }
@@ -469,7 +480,8 @@ console.log("\nDit is de opbrengst prijs van alle ingekochte tv's: €" + totalP
 // 3B
 console.log("\nDit is de opbrengst van de huidige verkochte tv's: €" + calculateCurrentProfit);
 
-
+// 5e
+console.log("\nDit is een lijst van alle tv's: " + tvList);
 // ----------------------------------------------------------------------------------------
 
 

@@ -8,6 +8,9 @@
     --color-5: #555;
     --color-6: #444;
     --color-7: #bbff00;
+    --color-red: #FF0051FF;
+    --color-blue: #0099ff;
+    --color-green: #00b61f;
 }
 
 *, *::before, *::after {
@@ -19,7 +22,7 @@
 html {
     background: var(--color-3);
     color: var(--color-2);
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: normal;
     font-family: Quicksand, sans-serif;
 }
@@ -31,14 +34,14 @@ header {
     height: auto;
     background: var(--color-2);
     color: var(--color-4);
-    font-size: 5rem;
+    font-size: 4rem;
     text-align: center;
     border-bottom: 2px solid var(--color-4);
     z-index: 1;
 }
 
 .my_page {
-    padding: 6rem 6rem 6rem;
+    padding: 9rem 4rem 4rem;
     background: var(--color-1);
     width: 50%;
     min-height: 100vh;
@@ -50,8 +53,8 @@ h1, h3 {
 }
 
 hr {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     border-top: 0.2rem solid var(--color-7);
 }
 
@@ -62,7 +65,7 @@ li {
 button {
     background: var(--color-6);
     height: 2rem;
-    width: 20rem;
+    width: 10rem;
     color: var(--color-3);
     font-size: 1rem;
     font-family: Quicksand, sans-serif;
@@ -77,25 +80,41 @@ button:hover {
 }
 
 .numbers-to-sell {
-    color: #FF0051FF;
+    color: var(--color-red);
+    font-weight: bold;
 }
 
 .calculate-profit {
-    color: #0099ff;
+    color: var(--color-blue);
+    font-weight: bold;
 }
 
 .calculate-current-profit {
-    color: #00b61f;
+    color: var(--color-green);
+    font-weight: bold;
 }
 
 .one-tv-type {
     background: var(--color-5);
     border: 2px dashed var(--color-7);
-    align-items: center;
-    margin-top: 2rem;
+    text-align: center;
     padding: 1rem;
     width: 25rem;
     z-index: 0;
+    margin: auto;
+}
+
+.btns-menu {
+    color: var(--color-4);
+    position: fixed;
+    right: 1rem;
+    top: 50%;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 /*----------------------------------*/
